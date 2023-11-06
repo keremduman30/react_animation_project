@@ -1,5 +1,11 @@
+import Navbar from "./components/Navbar";
+
 function App() {
-  return <div className=" text-4xl text-primary">starting app</div>;
+  return (
+    <div className="">
+      <Navbar />
+    </div>
+  );
 }
 
 export default App;
