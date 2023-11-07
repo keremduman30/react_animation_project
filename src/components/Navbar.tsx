@@ -17,7 +17,7 @@ const Navbar = () => {
   const [clickMenu, setclickMenu] = useState<boolean>(false);
   return (
     <>
-      <nav className="bg-white    flex justify-between  my-5 max-w-screen-2xl text-primary mx-5 xl:mx-auto fixed top-0 right-0 left-0">
+      <nav className="bg-white h-20   flex justify-between  my-5 max-w-screen-2xl text-primary mx-2 xl:mx-auto fixed -top-5 right-0 left-0">
         <div className="flex gap-5 items-center  ">
           <a
             href="#"
