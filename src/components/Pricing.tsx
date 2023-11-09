@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { fadeIn } from "../variants";
+import { motion } from "framer-motion";
 type ListType = {
   name: string;
   color: string;
@@ -55,7 +57,7 @@ const pricingList: PricingType[] = [
 const Pricing = () => {
   const [isYearly, setisYearly] = useState(false);
   return (
-    <div className=" p-4 max-w-screen-2xl  mx-auto ">
+    <div id="pricing" className=" p-4 max-w-screen-2xl  mx-auto ">
       <div className="text-center">
         <h2 className="font-extrabold md:text-5xl text-3xl text-primary mb-2">
           Here are all our plans
@@ -88,7 +90,13 @@ const Pricing = () => {
           />
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 md:w-11/12 mx-auto">
+      <motion.div
+        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 md:w-11/12 mx-auto"
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.5}}
+      >
         {pricingList.map((e, i) => (
           <div
             key={e.name}
@@ -128,7 +136,7 @@ const Pricing = () => {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
