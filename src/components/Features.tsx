@@ -1,9 +1,17 @@
 import features from "../assets/features.png";
+import { fadeIn } from "../variants";
+import { motion } from "framer-motion";
 const Features = () => {
   return (
-    <div className="my-24 md:px-14 px-4 max-w-screen-2xl mx-auto">
+    <div id="feature" className="my-24 md:px-14 px-4 max-w-screen-2xl mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-start gap-10">
-        <div className="lg:w-1/4">
+        <motion.div
+          className="lg:w-1/4"
+          variants={fadeIn("right", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+        >
           <h3 className="text-3xl text-primary font-bold lg:w-1/2 mb-3">
             Why we are better than others
           </h3>
@@ -12,8 +20,14 @@ const Features = () => {
             sentence, which is often a declarative sentence, is called the
             “topic sentence.”
           </p>
-        </div>
-        <div className="w-full lg:w-3/4">
+        </motion.div>
+        <motion.div
+          className="w-full lg:w-3/4"
+          variants={fadeIn("up", 0.3)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+        >
           <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 items-start md:gap-12 gap-8">
             <div className="bg-[rgba(255, 255, 255, 0.04)] rounded-[35px] shadow-3xl h-96 p-8 flex justify-center  items-center  hover:-translate-y-4 transition-all duration-300 cursor-pointer">
               <div className="">
@@ -40,7 +54,7 @@ const Features = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
